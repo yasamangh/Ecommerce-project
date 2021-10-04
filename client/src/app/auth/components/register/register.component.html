@@ -1,0 +1,80 @@
+<div class="register-container">
+  <div class="form-container">
+    <h2>ثبت نام در سایت</h2>
+    <nz-alert
+      *ngIf="errorMessage"
+      nzShowIcon
+      nzType="error"
+      [nzMessage]="errorMessage"
+      [ngStyle]="{ 'margin-bottom': '16px' }"
+    ></nz-alert>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="input-container">
+        <label for="fullName">نام و نام خانوادگی</label>
+        <input
+          nz-input
+          type="text"
+          name="fullName"
+          [(ngModel)]="fullName"
+          placeholder="نام و نام خانوادگی خود را وارد کنید"
+        />
+      </div>
+      <div class="input-container">
+        <label for="email">آدرس ایمیل</label>
+        <input
+          nz-input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="ایمیل خود را وارد کنید"
+        />
+      </div>
+      <div class="🤪">
+        <div class="input-container">
+          <label for="password">رمز عبور</label>
+          <input
+            nz-input
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="رمز عبور خود را وارد کنید"
+          />
+        </div>
+        <div class="input-container">
+          <label for="confirmPassword">تایید رمز عبور</label>
+          <input
+            nz-input
+            type="password"
+            name="confirmPassword"
+            [(ngModel)]="confirmPassword"
+            placeholder="تکرار رمز عبور"
+          />
+        </div>
+      </div>
+      <div class="✅">
+        <!-- <div class="checkbox-container">
+          <input nz-input type="checkbox" />
+          <span>I agree to receive instructional and promotional emails</span>
+        </div> -->
+        <div class="checkbox-container">
+          <input nz-input type="checkbox" />
+          <span> با شرایط و ضوابط موافقم</span>
+        </div>
+      </div>
+      <div class="cta-container">
+        <!-- <input type="submit" value="Sign up" /> -->
+        <button
+          nz-button
+          type="submit"
+          [disabled]="!canSubmit()"
+          [nzLoading]="loading"
+        >
+          ثبت نام
+        </button>
+        <div class="text-align-center">
+          <div><a routerLink="/login">قبلا در سایت ثبت نام کردم</a></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

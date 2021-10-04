@@ -1,0 +1,55 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~swiper/swiper-bundle";
+@font-face {
+  font-family: danaBold;
+  src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-bold.woff2);
+}
+@font-face {
+  font-family: danaRegular;
+  src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-regular.woff2);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: danaBold;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ant-input-number-input {
+  height: 44px;
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #555;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 4px;
+}

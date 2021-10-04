@@ -1,0 +1,49 @@
+<div class="login-container">
+  <div class="form-container">
+    <h2>ورود به سایت</h2>
+    <nz-alert
+      *ngIf="error"
+      nzShowIcon
+      nzType="error"
+      [nzMessage]="error"
+      [ngStyle]="{ 'margin-bottom': '16px' }"
+    ></nz-alert>
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-container">
+        <label for="email">ایمیل</label>
+        <input
+          nz-input
+          type="email"
+          name="email"
+          placeholder="Enter email address"
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="input-container">
+        <label for="password">رمز عبور</label>
+        <input
+          nz-input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          [(ngModel)]="password"
+        />
+      </div>
+      <div class="cta-container">
+        <button
+          nz-button
+          type="submit"
+          [disabled]="!canSubmit()"
+          [nzLoading]="loading"
+        >
+          ورود
+        </button>
+        <div><a routerLink="/register">ایجاد حساب کاربری جدید</a></div>
+      </div>
+
+      <div class="forgot-password">
+        <a href="">فراموشی رمز عبور؟</a>
+      </div>
+    </form>
+  </div>
+</div>
