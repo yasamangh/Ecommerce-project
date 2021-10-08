@@ -21,14 +21,14 @@ exports.loginUser = async (params) => {
         if (err) {
           reject({
             data: err,
-            message: "Something went wrong, please try again",
+            message: "مشکلی وجود دارد، دوباره تلاش کنید",
             statusCode: 400,
           });
         }
 
         if (result.length === 0) {
           reject({
-            message: "Wrong credentials, please try again",
+            message: "اطلاعات کاربری درست نیست، دوباره تلاش کنید",
             statusCode: 400,
           });
         }
@@ -36,7 +36,7 @@ exports.loginUser = async (params) => {
         if (result.length > 0) {
           const token = jwt.sign({ data: result }, "secret");
           resolve({
-            message: "Logged in successfully",
+            message: "ورود موفقیت آمیز بود",
             data: result,
             token,
           });
@@ -60,7 +60,7 @@ exports.registerUser = async (params) => {
       (err, result) => {
         if (result.length > 0) {
           reject({
-            message: "Email address is in use, please try a different one",
+            message: "آدرس ایمیل تکراری است، لطفا آدرس دیگری را انتخاب کنید.",
             statusCode: 400,
           });
         } else if (result.length === 0) {
@@ -70,7 +70,7 @@ exports.registerUser = async (params) => {
             (err, result) => {
               if (err) {
                 reject({
-                  message: "Something went wrong, please try again",
+                  message: "مشکلی وجود دارد، دوباره تلاش کنید",
                   statusCode: 400,
                   data: err,
                 });
@@ -78,7 +78,7 @@ exports.registerUser = async (params) => {
                 const token = jwt.sign({ data: result }, "secret");
                 resolve({
                   data: result,
-                  message: "You have successfully registered.",
+                  message: "ثبت نام با موفقیت انجام شد",
                   token: token,
                   statusCode: 200,
                 });
