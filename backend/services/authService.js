@@ -5,6 +5,42 @@ const {
 const db = require("../database/db");
 const jwt = require("jsonwebtoken");
 const md5 = require("md5");
+const atob = require('atob');
+
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}
+
+exports.authenticateToken = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  const { data } = parseJwt(token)
+
+  // console.log(token == null && data[0].is_admin === 1)
+  
+  if (token == null || data[0].is_admin !== 1) return res.sendStatus(401);
+
+  jwt.verify(token, "secret", (err, user) => {
+    console.log(err);
+
+    if (err) return res.sendStatus(403);
+
+    req.user = user;
+
+    next();
+  });
+};
 
 exports.loginUser = async (params) => {
   const { error } = loginValidation(params);
