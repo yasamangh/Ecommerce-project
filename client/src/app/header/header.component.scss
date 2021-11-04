@@ -163,6 +163,7 @@
     height: 100%;
     position: relative;
     > h2 {
+      font-family: danaBold; 
       padding-left: 24px;
       margin-bottom: 24px;
       outline: none;
@@ -175,6 +176,7 @@
     > nav {
       > ul {
         > li {
+          font-family: danaBold;
           outline: none;
           padding: 8px 24px 8px;
           margin-bottom: 12px;

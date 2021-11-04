@@ -15,7 +15,7 @@
           nz-input
           type="email"
           name="email"
-          placeholder="Enter email address"
+          placeholder="ایمیل خود را وارد کنید"
           [(ngModel)]="email"
         />
       </div>
@@ -25,7 +25,7 @@
           nz-input
           type="password"
           name="password"
-          placeholder="Enter your password"
+          placeholder="رمز عبور خود را وارد کنید"
           [(ngModel)]="password"
         />
       </div>
@@ -35,6 +35,7 @@
           type="submit"
           [disabled]="!canSubmit()"
           [nzLoading]="loading"
+          (click)="showUserName()"
         >
           ورود
         </button>

@@ -24,6 +24,13 @@ export class ProductService {
 
   getSingleProduct(id: Number): Observable<any> {
     console.log(id);
+    console.log(this._api);
+    
     return this._api.getTypeRequest('products/' + id);
+  }
+
+  getCategories(){
+    console.log('daste bandi works!!!!');
+    return this._api.getTypeRequest('categories/');
   }
 }

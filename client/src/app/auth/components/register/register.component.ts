@@ -26,8 +26,13 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     this.errorMessage = '';
     if (this.fullName && this.password && this.email && this.confirmPassword) {
+      if(this.password.length < 6 ){
+        this.errorMessage = 'رمز عبور نمی تواند کمتر از 6 کارکتر باشد';
+        console.log(this.password.length);
+        
+      }
       if (this.password !== this.confirmPassword) {
-        this.errorMessage = 'Passwords need to match';
+        this.errorMessage = 'رمز عبور منطبق نمی باشد';
       } else {
         this.loading = true;
         this._auth
@@ -49,7 +54,7 @@ export class RegisterComponent implements OnInit {
           );
       }
     } else {
-      this.errorMessage = 'Make sure to fill everything ;)';
+      this.errorMessage = 'مجددا اطلاعات را بررسی کنید';
     }
   }
 

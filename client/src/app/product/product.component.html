@@ -26,7 +26,8 @@
           [zoom]="true"
           *ngFor="let image of showcaseImages; index as i"
         >
-          <img src="{{ image }}" alt="`Product image`" />
+          <img class="max-w-600 mt-20" src="{{ image }}" alt="`Product image`" />
+          <!-- <img src="assets/products/mobile1.png" alt=""> -->
         </ng-template>
       </swiper>
     </div>
@@ -41,7 +42,7 @@
           <i nz-icon nzType="star"></i>
         </div>
         <span class="review-link"
-          >10 نظرات |
+          > نظرات |
           <span style="cursor: pointer">افزودن نظر</span></span
         >
       </div>

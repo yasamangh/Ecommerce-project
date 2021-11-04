@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderComponent } from 'src/app/header/header.component';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -41,5 +42,9 @@ export class LoginComponent implements OnInit {
 
   canSubmit(): boolean {
     return this.email.length > 0 && this.password.length > 0;
+  }
+
+  showUserName(){
+    location.reload()
   }
 }

@@ -77,6 +77,7 @@ registerLocaleData(en);
     NzNotificationModule,
     NzProgressModule,
     NzTableModule,
+    HttpClientModule
   ],
   providers: [
     authInterceptorProviders,

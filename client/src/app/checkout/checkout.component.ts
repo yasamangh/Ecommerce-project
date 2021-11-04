@@ -43,6 +43,7 @@ export class CheckoutComponent implements OnInit {
         .submitCheckout(this.currentUser.user_id, this.cartData)
         .subscribe(
           (res: any) => {
+            console.log('salam');
             console.log(res);
             this.loading = false;
             this.orderId = res.orderId;
@@ -51,6 +52,7 @@ export class CheckoutComponent implements OnInit {
             this._cart.clearCart();
           },
           (err) => {
+            console.log('bye');
             console.log(err);
             this.loading = false;
           }
@@ -97,44 +99,44 @@ export class CheckoutComponent implements OnInit {
 
   billingAddress = [
     {
-      name: 'Full name',
-      placeholder: 'Enter your full name',
+      name: 'نام و نام خانوادگی',
+      placeholder: 'نام خود را وارد کنید',
       type: 'text',
       value: '',
     },
     {
-      name: 'Email',
-      placeholder: 'Enter your email address',
+      name: 'ایمیل',
+      placeholder: 'ایمیل خود را وارد کنید',
       type: 'email',
       value: '',
     },
     {
-      name: 'Address',
-      placeholder: 'Enter your address',
+      name: 'آدرس',
+      placeholder: 'آدرس خود را وارد کنید',
       type: 'text',
       value: '',
     },
     {
-      name: 'City',
-      placeholder: 'Enter your city',
+      name: 'شهر',
+      placeholder: 'نام شهر',
       type: 'text',
       value: '',
     },
     {
-      name: 'Country',
-      placeholder: 'Enter your country',
+      name: 'استان',
+      placeholder: 'نام استان',
       type: 'text',
       value: '',
     },
     {
-      name: 'ZIP',
-      placeholder: 'Enter your zip code',
+      name: 'کد پستی',
+      placeholder: 'کد پستی خود را وارد کنید',
       type: 'text',
       value: '',
     },
     {
-      name: 'Telephone',
-      placeholder: 'Enter your telephone number',
+      name: 'تلفن',
+      placeholder: 'شماره تلفن خود را وارد کنید',
       type: 'text',
       value: '',
     },

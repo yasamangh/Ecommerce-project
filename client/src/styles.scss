@@ -2,16 +2,28 @@
 @import "~swiper/swiper-bundle";
 @font-face {
   font-family: danaBold;
-  src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-bold.woff2);
+//   src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-bold.woff2);
+  src: url(./../../fonts/dana-bold.woff);
 }
 @font-face {
   font-family: danaRegular;
-  src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-regular.woff2);
+//   src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-regular.woff2);
+  src: url(./../../fonts/dana-regular.woff);
 }
+@font-face {
+    font-family: danaLight;
+  //   src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-bold.woff2);
+    src: url(./../../fonts/dana-light.woff);
+  }
+  @font-face {
+    font-family: danaMedium;
+  //   src: url(./../../Dana-Eco/webfonts/fonts/woff2/dana-regular.woff2);
+    src: url(./../../fonts/dana-medium.woff);
+  }
 
 * {
   box-sizing: border-box;
-  font-family: danaBold;
+  font-family: danaMedium;
 }
 
 html,
@@ -52,4 +64,8 @@ ul {
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 4px;
+}
+
+.ant-notification i{
+  left: 10px !important;
 }

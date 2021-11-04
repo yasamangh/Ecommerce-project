@@ -75,19 +75,18 @@
                   <div class="product-item__description">
                     <div class="product-name">{{ product.title }}</div>
                     <div class="product-amount">
-                      {{ product.quantity }} x
-                      <span>{{ product.price | persianNum}} تومان</span>
+                      {{ product.quantity | persianNum}} x
+                      <span> تومان {{ product.price | persianNum}} </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="cart-info">
-              <div class="selected-amount">
-                {{ cartData.products.length }} Item(s) selected
+              <div class="selected-amount">{{ cartData.products.length | persianNum}} محصول انتخاب شده 
               </div>
               <div class="total-price">
-                Total: {{ cartData.total | persianNum}} تومان
+                مجموع: {{ cartData.total | persianNum}} تومان
               </div>
             </div>
             <div class="cart-cta">
@@ -102,7 +101,7 @@
                   borderBottom: 'none'
                 }"
               >
-                View cart
+                مشاهده سبد خرید
               </button>
               <button
                 nz-button
@@ -116,13 +115,16 @@
                   borderBottom: 'none'
                 }"
               >
-                Checkout
+                خرید
               </button>
             </div>
           </div>
         </div>
       </nz-dropdown-menu>
     </ng-container>
+    <div>
+      {{userName}}
+    </div>
   </div>
 </header>
 

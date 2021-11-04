@@ -1,17 +1,18 @@
 <div class="home-container">
   <div class="categories">
     <div class="categories__header">
-      <h2>دسته بندی ها</h2>
+      <h2 class="dana-bold">دسته بندی ها</h2>
+      <!-- <img src="assets/products/mobile1.png" alt=""> -->
     </div>
     <div class="categories__list">
       <swiper
         [zoom]="false"
-        [slidesPerView]="screenWidth > 1200 ? 3 : 1"
+        [slidesPerView]="screenWidth > 1200 ? 1 : 1"
         [spaceBetween]="50"
         [pagination]="true"
         [loop]="true"
       >
-        <ng-template swiperSlide *ngFor="let c of categories">
+        <ng-template swiperSlide *ngFor="let c of categories; let i=index">
           <div class="category-card">{{ c.name }}</div>
         </ng-template>
       </swiper>
@@ -19,7 +20,7 @@
   </div>
   <div class="products">
     <div class="products__header">
-      <h2>جدیدترین محصولات</h2>
+      <h2 class="dana-bold">جدیدترین محصولات</h2>
     </div>
     <div *ngIf="loading" class="products__loading">
       <ng-template #indicatorTemplate>

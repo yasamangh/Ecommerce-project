@@ -10,6 +10,7 @@ import { TokenStorageService } from '../services/token-storage.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  userName;
   screenHeight: any;
   screenWidth: any;
   isMenuOpen = false;
@@ -34,7 +35,13 @@ export class HeaderComponent implements OnInit {
   ) {
     this.getScreenSize();
     this._auth.user.subscribe((user) => {
-      if (user) this.isLoggedIn = true;
+      if (user){
+        this.isLoggedIn = true;
+        // this._auth.user.subscribe((user) => {
+          console.log(user.full_name);
+          this.userName = user.full_name;
+        // })
+      }
       else this.isLoggedIn = false;
     });
     this._cart.cartDataObs$.subscribe((cartData) => {
