@@ -40,7 +40,7 @@ export class CheckoutComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this._cart
-        .submitCheckout(this.currentUser.user_id, this.cartData)
+        .submitCheckout(this.currentUser.id, this.cartData)
         .subscribe(
           (res: any) => {
             console.log('salam');
